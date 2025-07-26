@@ -1,0 +1,80 @@
+{
+"name":"RO75",
+"vendorId":"0x3EA9",
+"productId":"0x6206",
+"firmwareVersion":1.00,
+"keycodes":["qmk_lighting"],
+"customKeycodes": [
+     {"name": "Select USB",   "title": "Select USB output", "shortName":   "USB"},
+     {"name": "Select BLE1",  "title": "Select Bluetooth Channel 1",    "shortName":   "BLE1"},
+     {"name": "Select BLE2",  "title": "Select Bluetooth Channel 2",    "shortName":   "BLE2"},
+     {"name": "Select BLE3",  "title": "Select Bluetooth Channel 3",    "shortName":   "BLE3"},
+     {"name": "Select BLE4",  "title": "Select Bluetooth Channel 4",    "shortName":   "BLE4"},
+     {"name": "Clear Bonds",  "title": "Clear Bonds",    "shortName":   "CLBOND"},
+     {"name": "Select BLE",   "title": "Select Bluetooth output", "shortName":"BLE"},
+     {"name": "BlueTooth Off","title": "BlueTooth Off",   "shortName":   "B_OFF"},
+     {"name": "Keyboard Sleep","title":"Keyboard Sleep", "shortName":   "KSLEEP"},
+     {"name": "Select 2.4G",  "title": "Select 2.4G output",   "shortName":    "G24"},
+     {"name": "Keybaord Lock","title":"Keybaord Lock", "shortName":   "KLOCK"}
+  ],
+"menus":[
+      {"label":"rgb_matrix","content":
+       [
+        {"label":"rgb_matrix_regulate",
+         "content":[
+             {"label":"Brightness","type":"range","options":[0,255],"content":["id_qmk_rgb_matrix_brightness",3,1]},
+             {"label":"Effect","type":"dropdown","content":["id_qmk_rgb_matrix_effect",3,2],
+              "options":[
+                        ["00.NONE",0],
+                        ["01.solid_color",1],
+                        ["02.gradient_up_down",2],
+                        ["03.gradient_left_right",3],
+                        ["04.breathing",4],
+                        ["05.band_sat",5],
+                        ["06.band_val",6],
+                        ["07.band_spiral_sat",7],
+                        ["08.band_spiral_val",8],
+                        ["09.cycle_all",9],
+                        ["10.cycle_left_right",10],
+                        ["11.cycle_up_down",11],
+                        ["12.cycle_out_in",12],
+                        ["13.cycle_out_in_dual",13],
+                        ["14.rainbow_moving_chevron",14],
+                        ["15.cycle_pinwheel",15],
+                        ["16.cycle_spiral",16],
+                        ["17.dual_beacon",17],
+                        ["18.rainbow_beacon",18],
+                        ["19.rainbow_pinwheels",19],
+                        ["20.raindrops",20],
+                        ["21.jellybean_raindrops",21],
+                        ["22.hue_breathing",22]
+                       ]
+               },
+           {"showIf":"{id_qmk_rgb_matrix_effect} != 0",
+            "label":"Effect Speed",
+            "type":"range",
+            "options":[0,255],
+            "content":["id_qmk_rgb_matrix_effect_speed",3,3]
+               },
+           {"showIf":"{id_qmk_rgb_matrix_effect} != 0",
+            "label":"Color",
+            "type":"color",
+            "content":["id_qmk_rgb_matrix_color",3,4]
+                }
+              ]
+          }
+       ]
+     }
+  ],
+"matrix":{"rows":6,"cols":15},
+"layouts":{
+"keymap":[
+       ["0,0",{"x":0.5},"0,2","0,3","0,4","0,5",{"x":0.5},"0,6","0,7","0,8","0,9",{"x":0.5},"0,10","0,11","0,12","0,13",{"x":0.5},"0,14"],
+       ["1,0","1,1","1,2","1,3","1,4","1,5","1,6","1,7","1,8","1,9","1,10","1,11","1,12",{"w":2},"1,13","1,14"],
+       [{"w":1.5},"2,0","2,1","2,2","2,3","2,4","2,5","2,6","2,7","2,8","2,9","2,10","2,11","2,12",{"w":1.5},"2,13","2,14"],
+       [{"w":1.75},"3,0","3,1","3,2","3,3","3,4","3,5","3,6","3,7","3,8","3,9","3,10","3,11",{"w":2.25},"3,13","3,14"],
+       [{"w":2.25},"4,0","4,2","4,3","4,4","4,5","4,6","4,7","4,8","4,9","4,10","4,11",{"w":1.75},"4,12","4,13","4,14"],
+       [{"w":1.25},"5,0",{"w":1.25},"5,1",{"w":1.25},"5,2",{"w":6.25},"5,6",{"w":1.25},"5,10",{"w":1.25},"5,11",{"x":0.5},"5,12","5,13","5,14"]
+        ]
+    }
+}
